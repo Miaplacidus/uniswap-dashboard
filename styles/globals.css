@@ -44,7 +44,7 @@
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background-end-rgb: 46, 56, 99;
 
     --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
     --secondary-glow: linear-gradient(
@@ -83,21 +83,83 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  font-family: var(--font-mono);
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
+  /* background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
-    rgb(var(--background-start-rgb));
+    rgb(var(--background-start-rgb)); */
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem;
+  min-height: 100vh;
+}
+
+#__next {
+  background-color: #1b2036;
+}
+
+.table-container {
+  width: 85%;
+  background-color: #17182e;
+  padding: 2rem;
+  border-radius: 1rem;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.table-container header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2em;
+}
+
+.table-container header button {
+  padding: 0.5rem;
+}
+
+.table .header {
+  display: grid;
+  margin-bottom: 2em;
+}
+
+.table .header .item {
+  text-align: center;
+}
+
+.table .row {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  margin-bottom: 1.5em;
+}
+
+.table .row .item {
+  text-align: center;
+}
+
+.table .footer {
+  margin-top: 3em;
+  display: flex;
+}
+
+.table .footer .page-number {
+  cursor: pointer;
+  margin-right: 1.5em;
 }
 
 @media (prefers-color-scheme: dark) {
